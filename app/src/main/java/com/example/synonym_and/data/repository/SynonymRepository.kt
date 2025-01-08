@@ -6,7 +6,7 @@ import com.example.synonym_and.data.model.SynonymItem
 import kotlinx.coroutines.flow.Flow
 
 class SynonymRepository(private val synonymDAO: SynonymDAO) {
-    suspend fun insertSynonym(synonym: SynonymItem) {
+    suspend fun insertSynonym(synonym: SynonymEntity) {
         synonymDAO.insert(synonym)
     }
 

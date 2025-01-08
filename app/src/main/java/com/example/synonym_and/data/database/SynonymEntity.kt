@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey
 data class SynonymEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val text: String,
+    val title: String,
 )
