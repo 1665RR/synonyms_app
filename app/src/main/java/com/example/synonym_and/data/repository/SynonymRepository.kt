@@ -13,4 +13,20 @@ class SynonymRepository(private val synonymDAO: SynonymDAO) {
     suspend fun getAllSynonyms() : Flow<List<SynonymItem>> {
         return synonymDAO.getAllRecords()
     }
+
+    suspend fun addSynonym(synonymEntity: SynonymEntity) {
+        return synonymDAO.addSynonym(synonym = synonymEntity)
+    }
+
+    suspend fun updateSynonym(synonymEntity: SynonymEntity) {
+        return synonymDAO.updateSynonym(synonym = synonymEntity)
+    }
+
+    suspend fun deleteSynonym(synonymEntity: SynonymEntity) {
+        return synonymDAO.deleteSynonym(synonym = synonymEntity)
+    }
+
+    suspend fun deleteAllSynonym() {
+        return synonymDAO.deleteAllSynonym()
+    }
 }
