@@ -12,11 +12,4 @@ class SynonymViewModel(private val synonymRepository: SynonymRepository): ViewMo
     private val _synonyms = MutableStateFlow<List<SynonymItem>>(emptyList())
     val synonym: StateFlow<List<SynonymItem>> = _synonyms
 
-    fun loadSynonyms() {
-        viewModelScope.launch {
-            synonymRepository.getAllSynonyms().collect { synonymsList ->
-                _synonyms.value = synonymsList
-            }
-        }
-    }
 }
